@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.example.baseframe.ui.TestWeightActivity"/>
+<!--        <variable
+            name="bannerBean"
+            type="com.example.mvvmapp.bean.WanAndroidBannerBean"/>-->
+        <variable
+            name="viewModel"
+            type="com.example.baseframe.ui.viewmodel.MainDetialViewModel"/>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/color_write">
+
+        <LinearLayout
+            android:id="@+id/topLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlEnablePureScrollMode="true">
+
+        <ScrollView
+            android:id="@+id/mScrollView"
+            android:fillViewport="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="fitXY"
+                    app:displayImg="@{viewModel.mBannerBean.imagePath}"
+                    app:displayType="@{4}"
+                    android:id="@+id/primary_message_details_img"/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:text="@{viewModel.mBannerBean.title}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <!--示例DataBinding 字符串拼接 注意单引号-->
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:text='@{"文章链接:"+viewModel.mBannerBean.url}'
+                    android:layout_width="match_parent"
+                    android:autoLink="web"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:text='@{"当前下载进度:"+viewModel.mBannerBean.progressValue+"%"}'
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    style="@style/btn_style"
+                    android:id="@+id/btn1"
+                    onBindingClick="@{viewModel.permissionsEvent}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="点击体验权限申请" />
+
+                <!--onBindingClick="@{viewModel.downLoadEvent}-->
+                <TextView
+                    style="@style/btn_style"
+                    android:id="@+id/btn2"
+                    onBindingClick="@{viewModel.downloadClick}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.downBtnName}" />
+
+                <TextView
+                    android:id="@+id/btn3"
+                    style="@style/btn_style"
+                    onBindingClick="@{viewModel.errorClick}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="点击体验闪退的乐趣" />
+
+                <TextView
+                    android:id="@+id/btn4"
+                    style="@style/btn_style"
+                    onBindingClick="@{viewModel.fragmentClick}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="示例Fragment使用" />
+
+                <TextView
+                    android:id="@+id/btn5"
+                    style="@style/btn_style"
+                    android:onClick="@{()->viewModel.toWebView()}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="示例网页加载出错显示默认网页" />
+
+                <TextView
+                    style="@style/btn_style"
+                    android:onClick="@{()->viewModel.toTestWeight()}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="跳转测试控件" />
+
+            </LinearLayout>
+        </ScrollView>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    </LinearLayout>
+</layout>

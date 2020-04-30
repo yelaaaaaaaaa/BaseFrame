@@ -17,8 +17,9 @@ import com.example.baseframe.bus.event.SingleLiveEvent;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.disposables.Disposable;
+
+import io.reactivex.rxjava3.disposables.CompositeDisposable;
+import io.reactivex.rxjava3.disposables.Disposable;
 
 import static com.example.baseframe.utils.CommUtils.isListNotNull;
 

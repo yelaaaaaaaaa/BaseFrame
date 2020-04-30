@@ -6,8 +6,9 @@ import com.example.baseframe.base.BaseViewModel;
 import com.example.baseframe.bean.ResultBean;
 import com.example.baseframe.bean.ResultBeans;
 
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
+
+import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.disposables.Disposable;
 
 import static com.example.baseframe.api.ConfigApi.ERROR_CODE;
 

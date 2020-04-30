@@ -4,6 +4,7 @@ package com.example.baseframe.api;
 import android.util.Log;
 
 import com.blankj.ALog;
+import com.example.baseframe.rx.rxjava3adapter.RxJava3CallAdapterFactory;
 import com.example.baseframe.utils.CommUtils;
 
 import java.util.concurrent.TimeUnit;
@@ -59,7 +60,7 @@ public class RetrofitFactory {
                 .baseUrl(ConfigApi.BASE_URL)
                 // 设置解析转换工厂
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                 .build();
         return mRetrofit;
     }

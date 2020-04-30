@@ -14,9 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.blankj.ALog;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.module.LoadMoreModule;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.example.baseframe.R;
 import com.example.baseframe.api.ConfigApi;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -25,7 +28,7 @@ import java.util.List;
  * @anthor yzh
  * @time 2019/11/23 11:17
  */
-public abstract class BaseMvvmRecyclerAdapter<T> extends BaseQuickAdapter<T, BaseMvvmRecyclerAdapter.BindingViewHolder> {
+public abstract class BaseMvvmRecyclerAdapter<T> extends BaseQuickAdapter<T, BaseMvvmRecyclerAdapter.BindingViewHolder> implements LoadMoreModule {
     private ObservableList<T> mTObservableList;//让list数据变更后自动notifyItemRangeChanged刷新
 
     public RecyclerView recyclerView;
@@ -47,9 +50,9 @@ public abstract class BaseMvvmRecyclerAdapter<T> extends BaseQuickAdapter<T, Bas
     protected BaseMvvmRecyclerAdapter(@LayoutRes int layoutResId, @Nullable List<T> data) {
         super(layoutResId, data);
         this.mTObservableList = data == null ? new ObservableArrayList<T>() : (ObservableList<T>) data;
-        if (layoutResId != 0) {
-            this.mLayoutResId = layoutResId;
-        }
+//        if (layoutResId != 0) {
+//            this.mLayoutResId = layoutResId;
+//        }
         mTObservableList.addOnListChangedCallback(new ObservableList.OnListChangedCallback<ObservableList<T>>() {
             @Override
             public void onChanged(ObservableList<T> ts) {
@@ -64,13 +67,13 @@ public abstract class BaseMvvmRecyclerAdapter<T> extends BaseQuickAdapter<T, Bas
 
             @Override
             public void onItemRangeInserted(ObservableList<T> ts, int positionStart, int itemCount) {
-                ALog.e("onItemRangeInserted() "+getEmptyViewCount() +ConfigApi.EMPTY_VIEW);
+                ALog.e("onItemRangeInserted() "+(getEmptyLayout()==null?"0":"1" )+ConfigApi.EMPTY_VIEW);
 
                 //踩坑提示：使用 quickadapter.setEmptyView 设置空布局后， 刷新又有了数据 必须调用mAdapter.setNewData(mList); 而不是调用notifyDataSetChanged()系列; 否则会报错
 
 //                if(getEmptyViewCount()>0){ 不能用这个在这里判断,因为mTObservableList有值后getEmptyViewCount 会变成0
                 if(ConfigApi.EMPTY_VIEW){
-                    setNewData(ts);
+                    setNewInstance(ts);
                 }else{
                     notifyItemRangeInserted(positionStart, itemCount);
                 }
@@ -98,20 +101,26 @@ public abstract class BaseMvvmRecyclerAdapter<T> extends BaseQuickAdapter<T, Bas
 //        ViewDataBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), layoutResId, parent, false);
 //        return BaseMvvmRecyclerHolder.getRecyclerHolder(binding,binding.getRoot());
 //    }
+
     @Override
-    protected View getItemView(int layoutResId, ViewGroup parent) {
-        ViewDataBinding binding = DataBindingUtil.inflate(mLayoutInflater, layoutResId, parent, false);
-        if (binding == null) {
-            return super.getItemView(layoutResId, parent);
-        }
-        View view = binding.getRoot();
-        view.setTag(R.id.BaseQuickAdapter_databinding_support, binding);
-        return view;
+    protected void onItemViewHolderCreated(@NotNull BindingViewHolder viewHolder, int viewType) {
+        DataBindingUtil.bind(viewHolder.itemView);
     }
+
+//    @Override
+//    protected View getItemView(int layoutResId, ViewGroup parent) {
+//        ViewDataBinding binding = DataBindingUtil.inflate(mLayoutInflater, layoutResId, parent, false);
+//        if (binding == null) {
+//            return super.getItemView(layoutResId, parent);
+//        }
+//        View view = binding.getRoot();
+//        view.setTag(R.id.BaseQuickAdapter_databinding_support, binding);
+//        return view;
+//    }
 
     @Override
     protected void convert(@NonNull BaseMvvmRecyclerAdapter.BindingViewHolder helper, T item) {
-        ViewDataBinding binding = helper.getBinding();
+        ViewDataBinding binding = DataBindingUtil.getBinding(helper.itemView);
         // 建议item.xml里的bean的别名都取itemBean，自定义命名的话，构造函数又要增加一个别名参数（variableId）
         binding.setVariable(com.example.baseframe.BR.itemBean, item);
         binding.executePendingBindings();
@@ -136,9 +145,9 @@ public abstract class BaseMvvmRecyclerAdapter<T> extends BaseQuickAdapter<T, Bas
         public BindingViewHolder(View view) {
             super(view);
         }
-        public ViewDataBinding getBinding() {
-            return (ViewDataBinding) itemView.getTag(R.id.BaseQuickAdapter_databinding_support);
-        }
+//        public ViewDataBinding getBinding() {
+//            return (ViewDataBinding) itemView.getTag(R.id.BaseQuickAdapter_databinding_support);
+//        }
     }
 
 }

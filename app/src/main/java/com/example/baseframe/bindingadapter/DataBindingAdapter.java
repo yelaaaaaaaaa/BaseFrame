@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.RequestOptions;
+import com.chad.library.adapter.base.animation.ScaleInAnimation;
 import com.example.baseframe.base.BaseMvvmRecyclerAdapter;
 import com.example.baseframe.weight.recyclerview.DividerLine;
 
@@ -90,7 +91,8 @@ public class DataBindingAdapter {
         recyclerView.setAdapter(adapter);
         //设置动画
         if (animation != 0) {
-            adapter.openLoadAnimation(animation);
+            adapter.setAdapterAnimation(new ScaleInAnimation());
+           // adapter.openLoadAnimation(animation);
         }
         //adapter.notifyDataSetChanged();
         // recyclerView.setPageFooter(R.layout.layout_loading_footer);

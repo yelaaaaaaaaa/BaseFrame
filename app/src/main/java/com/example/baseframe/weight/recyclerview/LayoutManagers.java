@@ -21,26 +21,26 @@ public class LayoutManagers {
 
 
     //Animation 默认提供5种方法（渐显、缩放、从下到上，从左到右、从右到左）
-    /**
-     * 渐显
-     */
-    public static final int ALPHAIN = BaseQuickAdapter.ALPHAIN;
-    /**
-     * 缩放
-     */
-    public static final int SCALEIN = BaseQuickAdapter.SCALEIN;
-    /**
-     * 从下到上
-     */
-    public static final int SLIDEIN_BOTTOM = BaseQuickAdapter.SLIDEIN_BOTTOM;
-    /**
-     * 从左到右
-     */
-    public static final int SLIDEIN_LEFT = BaseQuickAdapter.SLIDEIN_LEFT;
-    /**
-     * 从右到左
-     */
-    public static final int SLIDEIN_RIGHT = BaseQuickAdapter.SLIDEIN_RIGHT;
+//    /**
+//     * 渐显
+//     */
+//    public static final int ALPHAIN = BaseQuickAdapter.AnimationType.ALPHAIN;
+//    /**
+//     * 缩放
+//     */
+//    public static final int SCALEIN = BaseQuickAdapter.SCALEIN;
+//    /**
+//     * 从下到上
+//     */
+//    public static final int SLIDEIN_BOTTOM = BaseQuickAdapter.SLIDEIN_BOTTOM;
+//    /**
+//     * 从左到右
+//     */
+//    public static final int SLIDEIN_LEFT = BaseQuickAdapter.SLIDEIN_LEFT;
+//    /**
+//     * 从右到左
+//     */
+//    public static final int SLIDEIN_RIGHT = BaseQuickAdapter.SLIDEIN_RIGHT;
 
 
     protected LayoutManagers() {

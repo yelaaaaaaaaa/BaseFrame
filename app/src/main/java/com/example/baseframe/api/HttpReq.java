@@ -9,9 +9,10 @@ import com.example.baseframe.bean.WanAndroidBannerBean;
 
 import java.util.HashMap;
 
-import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.schedulers.Schedulers;
+
 
 import static com.example.baseframe.api.ConfigApi.ERROR_CODE;
 

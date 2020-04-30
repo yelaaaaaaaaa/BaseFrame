@@ -54,8 +54,8 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
-    implementation 'com.afollestad.material-dialogs:commons:0.9.4.5'
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
+    //implementation 'com.afollestad.material-dialogs:commons:0.9.4.5'
     implementation 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:4.0.0'
     implementation 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:4.0.0'
     implementation 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-viewpager2:4.0.0'
@@ -67,7 +67,7 @@ dependencies {
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.2'
     //ALog
     api 'com.blankj:alog:1.9.1'
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.3'
     //    //智能下拉刷新
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
     //滴滴的调试插件   https://github.com/didi/DoraemonKit

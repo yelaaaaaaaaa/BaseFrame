@@ -405,7 +405,7 @@ public class RootActivity extends RxAppCompatActivity {
             }
             ConfigApi.EMPTY_VIEW=false;
         }
-        ALog.v(adapter.getEmptyViewCount()+"---adapter.getEmptyViewCount()");
+       // ALog.v(adapter.getEmptyViewCount()+"---adapter.getEmptyViewCount()");
     }
 
     private View emptyView;

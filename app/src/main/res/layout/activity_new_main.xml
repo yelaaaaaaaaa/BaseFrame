@@ -4,7 +4,7 @@
     xmlns:bind="http://schemas.android.com/tools">
 
     <data>
-        <import type="com.example.baseframe.weight.recyclerview.LayoutManagers"/>
+<!--        <import type="com.example.baseframe.weight.recyclerview.LayoutManagers"/>-->
         <variable
             name="viewModel"
             type="com.example.baseframe.ui.viewmodel.MainNewViewModel"/>
@@ -35,10 +35,9 @@
                 android:scrollbars="vertical"
                 android:scrollbarStyle="outsideOverlay"
                 app:adapter="@{viewModel.mAdapter}"
-                bindAdapterAnimation="@{LayoutManagers.SCALEIN}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:layout_height="match_parent"/>
         </com.scwang.smartrefresh.layout.SmartRefreshLayout>
-
+<!--        bindAdapterAnimation="@{LayoutManagers.SCALEIN}"-->
     </LinearLayout>
 </layout>

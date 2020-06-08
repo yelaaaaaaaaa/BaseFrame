@@ -1,4 +1,4 @@
-package com.example.baseframe.bus;
+package com.example.baseframe.rx.bus;
 
 
 import io.reactivex.rxjava3.disposables.CompositeDisposable;

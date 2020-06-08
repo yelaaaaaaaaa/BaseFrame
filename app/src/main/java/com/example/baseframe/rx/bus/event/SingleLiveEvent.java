@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package com.example.baseframe.bus.event;
+package com.example.baseframe.rx.bus.event;
 
 import androidx.annotation.MainThread;
 import androidx.annotation.Nullable;

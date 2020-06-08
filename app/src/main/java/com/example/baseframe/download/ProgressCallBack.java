@@ -3,9 +3,9 @@ package com.example.baseframe.download;
 import android.util.Log;
 
 
-import com.example.baseframe.bus.RxBus;
-import com.example.baseframe.bus.RxBusCode;
-import com.example.baseframe.bus.RxSubscriptions;
+import com.example.baseframe.rx.bus.RxBus;
+import com.example.baseframe.rx.bus.RxBusCode;
+import com.example.baseframe.rx.bus.RxSubscriptions;
 
 import java.io.File;
 import java.io.FileNotFoundException;

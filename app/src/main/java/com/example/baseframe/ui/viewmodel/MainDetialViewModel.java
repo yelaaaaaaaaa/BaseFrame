@@ -10,7 +10,7 @@ import com.blankj.ALog;
 
 import com.example.baseframe.base.BaseViewModel;
 import com.example.baseframe.bean.WanAndroidBannerBean;
-import com.example.baseframe.bus.event.SingleLiveEvent;
+import com.example.baseframe.rx.bus.event.SingleLiveEvent;
 import com.example.baseframe.listener.ClickListener;
 import com.example.baseframe.ui.TestDetailFragment;
 import com.example.baseframe.ui.TestWeightActivity;

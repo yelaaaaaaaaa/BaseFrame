@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package com.example.baseframe.bus.event;
+package com.example.baseframe.rx.bus.event;
 
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;

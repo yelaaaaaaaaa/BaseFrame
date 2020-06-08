@@ -18,7 +18,7 @@ import com.example.baseframe.bean.ArticlesBean;
 import com.example.baseframe.bean.ResultBeans;
 
 import com.example.baseframe.bean.WanAndroidBannerBean;
-import com.example.baseframe.bus.event.SingleLiveEvent;
+import com.example.baseframe.rx.bus.event.SingleLiveEvent;
 import com.example.baseframe.utils.ToastUtils;
 import com.example.baseframe.webview.WebViewActivity;
 

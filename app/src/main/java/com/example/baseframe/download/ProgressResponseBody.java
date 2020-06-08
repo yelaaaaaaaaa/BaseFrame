@@ -1,7 +1,7 @@
 package com.example.baseframe.download;
 
-import com.example.baseframe.bus.RxBus;
-import com.example.baseframe.bus.RxBusCode;
+import com.example.baseframe.rx.bus.RxBus;
+import com.example.baseframe.rx.bus.RxBusCode;
 
 import java.io.IOException;
 

@@ -8,8 +8,8 @@ import com.blankj.ALog;
 
 import com.example.baseframe.R;
 import com.example.baseframe.base.BaseActivity;
-import com.example.baseframe.bus.RxBus;
-import com.example.baseframe.bus.RxBusCode;
+import com.example.baseframe.rx.bus.RxBus;
+import com.example.baseframe.rx.bus.RxBusCode;
 import com.example.baseframe.databinding.ActivityMainDetailBinding;
 import com.example.baseframe.databinding.TitleLayoutBinding;
 import com.example.baseframe.downloadapk.DownloadAPk;

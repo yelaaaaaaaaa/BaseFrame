@@ -1,4 +1,4 @@
-package com.example.baseframe.bus;
+package com.example.baseframe.rx.bus;
 
 import android.graphics.Color;
 import android.text.TextUtils;

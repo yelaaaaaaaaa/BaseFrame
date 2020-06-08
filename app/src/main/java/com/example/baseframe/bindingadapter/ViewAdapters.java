@@ -7,7 +7,7 @@ import android.widget.TextView;
 import androidx.databinding.BindingAdapter;
 
 import com.blankj.ALog;
-import com.example.baseframe.bus.event.SingleLiveEvent;
+import com.example.baseframe.rx.bus.event.SingleLiveEvent;
 import com.example.baseframe.listener.ClickListener;
 import com.example.baseframe.utils.ButtonUtils;
 import com.example.baseframe.utils.CommUtils;

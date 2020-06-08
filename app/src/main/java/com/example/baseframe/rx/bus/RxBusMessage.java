@@ -1,4 +1,4 @@
-package com.example.baseframe.bus;
+package com.example.baseframe.rx.bus;
 
 public class RxBusMessage {
     private int code;

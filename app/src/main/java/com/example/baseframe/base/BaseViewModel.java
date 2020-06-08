@@ -12,7 +12,7 @@ import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 
 
-import com.example.baseframe.bus.event.SingleLiveEvent;
+import com.example.baseframe.rx.bus.event.SingleLiveEvent;
 
 import java.util.HashMap;
 import java.util.Map;

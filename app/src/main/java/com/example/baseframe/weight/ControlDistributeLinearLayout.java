@@ -1,4 +1,4 @@
-package com.example.baseframe.widget;
+package com.example.baseframe.weight;
 
 import android.content.Context;
 import android.content.res.TypedArray;

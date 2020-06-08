@@ -32,7 +32,7 @@ import static com.example.baseframe.utils.CommUtils.getInstallAppIntent;
 
 /**
  *  除了下载功能与MainDetailActivity一样  --只是为了 示例Fragment 使用
- * Anthor yzh Date 2019/12/9 13:57
+ *  Date 2019/12/9 13:57
  */
 public class TestDetailFragment extends BaseFragment<ActivityMainDetailBinding, MainDetialViewModel> {
     TitleLayoutBinding mTitleLayoutBinding;

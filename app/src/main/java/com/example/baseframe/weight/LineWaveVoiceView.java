@@ -21,7 +21,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- *  @anthor yzh
+ *  @
  * 语音录制的动画效果
  *  基于 https://www.jianshu.com/p/6dd10a5adca8 修改
  */

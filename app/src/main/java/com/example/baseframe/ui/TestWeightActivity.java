@@ -16,7 +16,7 @@ import com.example.baseframe.weight.SuperTextView;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @anthor yzh
+ * @
  * @time 2019/11/30 15:07
  */
 public class TestWeightActivity extends BaseActivity<ActivityTestWeightBinding, BaseViewModel> {

@@ -18,7 +18,7 @@ import com.example.baseframe.webview.WebViewActivity;
 
 
 /**
- * Anthor yzh Date 2019/12/6 11:32
+ *  Date 2019/12/6 11:32
  */
 public class MainDetialViewModel extends BaseViewModel {
     private Bundle bundle;

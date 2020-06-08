@@ -13,7 +13,7 @@ import com.example.baseframe.ui.main.MainNewActivity;
 
 
 /**
- * Anthor yzh Date 2019/11/6 10:36
+ *  Date 2019/11/6 10:36
  */
 public class AppApplication extends App {
 

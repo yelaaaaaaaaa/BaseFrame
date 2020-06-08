@@ -6,7 +6,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 
 /**
- * anthor yzh
+ *
  * time 2019/12/5 14:37
  */
 public class Other {

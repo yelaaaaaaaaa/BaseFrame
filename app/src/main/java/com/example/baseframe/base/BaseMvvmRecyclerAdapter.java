@@ -25,7 +25,7 @@ import java.util.List;
 
 /**
  * 基于BaseQuickAdapter 实现MVVM模式的BaseMvvmRecyclerAdapter
- * @anthor yzh
+ * @
  * @time 2019/11/23 11:17
  */
 public abstract class BaseMvvmRecyclerAdapter<T> extends BaseQuickAdapter<T, BaseMvvmRecyclerAdapter.BindingViewHolder> implements LoadMoreModule {

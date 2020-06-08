@@ -28,7 +28,7 @@ import static com.example.baseframe.utils.CommUtils.isListNotNull;
  * BaseViewModel只使用 LiveData 方式去刷新数据
  *  也有其实的实现方式（但不太建议）
  *
- * anthor yzh time 2019/11/27 10:07
+ *  time 2019/11/27 10:07
  */
 public abstract class BaseViewModel extends AndroidViewModel {
    // public int mPage = 1;//列表分页使用默认1开始

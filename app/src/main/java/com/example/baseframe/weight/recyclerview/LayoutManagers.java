@@ -54,14 +54,11 @@ public class LayoutManagers {
      * A {@link LinearLayoutManager}.
      */
     public static LayoutManagerFactory linear() {
-        return new LayoutManagerFactory() {
-            @Override
-            public RecyclerView.LayoutManager create(RecyclerView recyclerView, Context context) {
-                if (context == null) {
-                    return new LinearLayoutManager(recyclerView.getContext());
-                } else {
-                    return new LinearLayoutManager(context);
-                }
+        return (recyclerView, context) -> {
+            if (context == null) {
+                return new LinearLayoutManager(recyclerView.getContext());
+            } else {
+                return new LinearLayoutManager(context);
             }
         };
     }

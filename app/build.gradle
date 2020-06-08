@@ -37,8 +37,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'androidx.navigation:navigation-fragment:2.3.0-alpha05'
-    implementation 'androidx.navigation:navigation-ui:2.3.0-alpha05'
+    implementation 'androidx.navigation:navigation-fragment:2.3.0-beta01'
+    implementation 'androidx.navigation:navigation-ui:2.3.0-beta01'
     implementation 'androidx.vectordrawable:vectordrawable-animated:1.1.0'
     implementation 'io.reactivex.rxjava3:rxjava:3.0.2'
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
@@ -61,7 +61,7 @@ dependencies {
     implementation 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-viewpager2:4.0.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation "androidx.lifecycle:lifecycle-common-java8:2.2.0"
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.2'
@@ -71,7 +71,7 @@ dependencies {
     //    //智能下拉刷新
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
     //滴滴的调试插件   https://github.com/didi/DoraemonKit
-    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:2.0.1'
+    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:3.1.4'
     releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:2.0.2'
     implementation 'androidx.multidex:multidex:2.0.1'
 }

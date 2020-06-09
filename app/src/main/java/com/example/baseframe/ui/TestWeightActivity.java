@@ -3,9 +3,9 @@ package com.example.baseframe.ui;
 import com.blankj.ALog;
 
 import com.example.baseframe.R;
-import com.example.baseframe.base.BaseActivity;
-import com.example.baseframe.base.BaseViewModel;
-import com.example.baseframe.rx.bus.RxTimerUtil;
+import com.example.baseframe.frame.base.BaseActivity;
+import com.example.baseframe.frame.base.BaseViewModel;
+import com.example.baseframe.frame.rx.bus.RxTimerUtil;
 import com.example.baseframe.databinding.ActivityTestWeightBinding;
 import com.example.baseframe.utils.animations.Other;
 import com.example.baseframe.utils.animations.RxAnimation;

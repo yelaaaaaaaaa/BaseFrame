@@ -8,13 +8,13 @@ import androidx.databinding.ObservableField;
 
 import com.blankj.ALog;
 
-import com.example.baseframe.base.BaseViewModel;
-import com.example.baseframe.bean.WanAndroidBannerBean;
-import com.example.baseframe.rx.bus.event.SingleLiveEvent;
+import com.example.baseframe.frame.base.BaseViewModel;
+import com.example.baseframe.data.bean.WanAndroidBannerBean;
+import com.example.baseframe.frame.rx.bus.event.SingleLiveEvent;
 import com.example.baseframe.listener.ClickListener;
 import com.example.baseframe.ui.TestDetailFragment;
 import com.example.baseframe.ui.TestWeightActivity;
-import com.example.baseframe.webview.WebViewActivity;
+import com.example.baseframe.weight.webview.WebViewActivity;
 
 
 /**

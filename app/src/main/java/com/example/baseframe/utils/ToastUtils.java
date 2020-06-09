@@ -19,7 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 
 import com.example.baseframe.R;
-import com.example.baseframe.api.App;
+import com.example.baseframe.App;
 
 import java.lang.ref.WeakReference;
 

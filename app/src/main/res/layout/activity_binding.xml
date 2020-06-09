@@ -6,7 +6,7 @@
         <!-- 随便引用一个对象，只是为了生成一个占位的BR.viewModel-->
         <variable
             name="viewModel"
-            type="com.example.baseframe.base.BaseViewModel"/>
+            type="com.example.baseframe.frame.base.BaseViewModel"/>
 
         <!-- 随便引用一个对象，只是为了生成一个占位的BR.itemBean-->
         <variable

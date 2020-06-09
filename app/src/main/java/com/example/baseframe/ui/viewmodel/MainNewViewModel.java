@@ -9,18 +9,18 @@ import androidx.databinding.ObservableArrayList;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.baseframe.R;
-import com.example.baseframe.api.CommonObserver;
+import com.example.baseframe.data.CommonObserver;
 
-import com.example.baseframe.api.HttpReq;
-import com.example.baseframe.base.BaseMvvmRecyclerAdapter;
-import com.example.baseframe.base.BaseViewModel;
-import com.example.baseframe.bean.ArticlesBean;
-import com.example.baseframe.bean.ResultBeans;
+import com.example.baseframe.data.api.GlobalReq;
+import com.example.baseframe.frame.base.BaseMvvmRecyclerAdapter;
+import com.example.baseframe.frame.base.BaseViewModel;
+import com.example.baseframe.data.bean.ArticlesBean;
+import com.example.baseframe.data.bean.ResultListBean;
 
-import com.example.baseframe.bean.WanAndroidBannerBean;
-import com.example.baseframe.rx.bus.event.SingleLiveEvent;
+import com.example.baseframe.data.bean.WanAndroidBannerBean;
+import com.example.baseframe.frame.rx.bus.event.SingleLiveEvent;
 import com.example.baseframe.utils.ToastUtils;
-import com.example.baseframe.webview.WebViewActivity;
+import com.example.baseframe.weight.webview.WebViewActivity;
 
 
 import java.util.ArrayList;
@@ -29,12 +29,12 @@ import java.util.List;
 
 import io.reactivex.rxjava3.disposables.Disposable;
 
-import static com.example.baseframe.api.ConfigApi.ERROR_CODE;
+import static com.example.baseframe.global.SystemConst.ERROR_CODE;
 import static com.example.baseframe.utils.CommUtils.isListNotNull;
 
 /**
- *
  * Author: yzh
+ *
  * @CreateDate: 2019/11/16 11:58
  */
 @SuppressLint("CheckResult")
@@ -42,6 +42,7 @@ public class MainNewViewModel extends BaseViewModel {
 
     //使用LiveData 可通知Activity去toast
     public SingleLiveEvent<String> toastEvent = new SingleLiveEvent<>();
+    public MutableLiveData<List<WanAndroidBannerBean>> data = new MutableLiveData<>();
 
     @Override
     public void onBundle(Bundle bundle) {
@@ -51,16 +52,16 @@ public class MainNewViewModel extends BaseViewModel {
         super(application);
     }
 
-    private ObservableArrayList<ArticlesBean> mList=new ObservableArrayList<>();
+    private ObservableArrayList<ArticlesBean> mList = new ObservableArrayList<>();
 
-    public BaseMvvmRecyclerAdapter<ArticlesBean> mAdapter=new BaseMvvmRecyclerAdapter<ArticlesBean>(R.layout.item_message, mList) {
+    public BaseMvvmRecyclerAdapter<ArticlesBean> mAdapter = new BaseMvvmRecyclerAdapter<ArticlesBean>(R.layout.item_message, mList) {
         @Override
-        public void convert(BindingViewHolder holder, ArticlesBean item,int position) {
+        public void convert(BindingViewHolder holder, ArticlesBean item, int position) {
             holder.itemView.setOnClickListener(v -> {
                 //当然可以直接在这toast,这里示例：回调给activity去处理
                 //ToastUtils.showShort(item.getLink());
                 toastEvent.setValue("试试点击banner");
-                WebViewActivity.loadUrl(item.getLink(),null);
+                WebViewActivity.loadUrl(item.getLink(), null);
             });
         }
     };
@@ -72,14 +73,13 @@ public class MainNewViewModel extends BaseViewModel {
 
 
     public MutableLiveData<List<WanAndroidBannerBean>> getWanAndroidBanner() {
-
-        final MutableLiveData<List<WanAndroidBannerBean>> data = new MutableLiveData<>();
-        HttpReq.getInstance().getWanBanner()
-                .subscribe(new CommonObserver<ResultBeans<WanAndroidBannerBean>>(this,true) {
+//        final MutableLiveData<List<WanAndroidBannerBean>> data = new MutableLiveData<>();
+        GlobalReq.getInstance().getWanBanner()
+                .subscribe(new CommonObserver<ResultListBean<WanAndroidBannerBean>>(this, true) {
                     @Override
-                    public void success(ResultBeans<WanAndroidBannerBean>  bannerBean) {
+                    public void success(ResultListBean<WanAndroidBannerBean> bannerBean) {
                         //ResultBean<WanAndroidBannerBean> 不会为空不需要做为空判断，因为前面调用onErrorReturn失败new一个空对象
- //                       if (bannerBean != null){
+                        //                       if (bannerBean != null){
 //                           data.setValue(bannerBean);
 //                        } else {
 //                            data.setValue(null);
@@ -96,33 +96,32 @@ public class MainNewViewModel extends BaseViewModel {
     }
 
 
-
     @SuppressLint("CheckResult")
-    public MutableLiveData<List<ArticlesBean>> getHomeList(int cid, boolean isRefresh){
-        if(isRefresh){
-           // mPage = 1;
+    public MutableLiveData<List<ArticlesBean>> getHomeList(int cid, boolean isRefresh) {
+        if (isRefresh) {
+            // mPage = 1;
             mPage.set(1);
         }
         final MutableLiveData<List<ArticlesBean>> data = new MutableLiveData<>();
-        Disposable subscribe= HttpReq.getInstance().getHomeList(mPage.get(),cid)
+        Disposable subscribe = GlobalReq.getInstance().getHomeList(mPage.get(), cid)
                 .subscribe(homeListBean -> { //可以使用CommonObserver弹窗
-                    if(homeListBean.getErrorCode()==ERROR_CODE){
+                    if (homeListBean.getErrorCode() == ERROR_CODE) {
                         ToastUtils.showShort("接口请求失败了~~");
                     }
                     List<ArticlesBean> articlesBeans = new ArrayList<>();
-                    if(homeListBean.getData()!=null){
-                        articlesBeans=homeListBean.getData().getDatas();
-                        if(isListNotNull(articlesBeans)){
-                            if(isRefresh){
+                    if (homeListBean.getData() != null) {
+                        articlesBeans = homeListBean.getData().getDatas();
+                        if (isListNotNull(articlesBeans)) {
+                            if (isRefresh) {
                                 mList.clear();
                             }
                             mList.addAll(articlesBeans);
                         }
-                      //  mAdapter.setNewData(mList);  list改变 无需调用刷新，已封装在BaseMvvmRecyclerAdapter
-                      //  mAdapter.notifyDataSetChanged();
+                        //  mAdapter.setNewData(mList);  list改变 无需调用刷新，已封装在BaseMvvmRecyclerAdapter
+                        //  mAdapter.notifyDataSetChanged();
                     }
 
-                    setPage(mList,isRefresh);
+                    setPage(mList, isRefresh);
                     data.setValue(mList);
                 });
 

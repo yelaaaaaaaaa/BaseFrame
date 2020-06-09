@@ -30,7 +30,7 @@ import androidx.core.content.FileProvider;
 
 import com.blankj.ALog;
 import com.example.baseframe.R;
-import com.example.baseframe.api.App;
+import com.example.baseframe.App;
 import com.example.baseframe.listener.Listener;
 
 

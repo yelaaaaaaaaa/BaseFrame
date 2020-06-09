@@ -6,7 +6,7 @@ import android.content.ComponentCallbacks;
 import android.content.res.Configuration;
 import android.util.DisplayMetrics;
 
-import com.example.baseframe.api.App;
+import com.example.baseframe.App;
 
 /**
  * @ClassName: (今日头条适配方案) 根据设计图 宽高的dp去设置（现在主流的UI设计图都使用蓝湖-设计图px会标注换算成dp）

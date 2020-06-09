@@ -69,7 +69,7 @@
             android:layout_height="match_parent"
             android:scrollbarSize="3dp" />
 
-        <com.example.baseframe.webview.config.WebProgress
+        <com.example.baseframe.weight.webview.config.WebProgress
             android:id="@+id/pb_progress"
             android:layout_width="match_parent"
             android:layout_height="3dp"

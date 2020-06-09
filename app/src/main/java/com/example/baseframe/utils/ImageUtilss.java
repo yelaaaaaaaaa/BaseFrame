@@ -37,7 +37,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 
-import com.example.baseframe.api.App;
+import com.example.baseframe.App;
 
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;

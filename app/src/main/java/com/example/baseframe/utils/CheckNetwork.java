@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import com.example.baseframe.api.App;
+import com.example.baseframe.App;
 
 /**
  * 用于判断是不是联网状态

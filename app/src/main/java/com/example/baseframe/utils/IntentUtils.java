@@ -17,7 +17,7 @@ import androidx.annotation.RequiresPermission;
 import androidx.core.content.FileProvider;
 
 import com.blankj.ALog;
-import com.example.baseframe.api.App;
+import com.example.baseframe.App;
 
 import java.io.File;
 import java.util.HashMap;

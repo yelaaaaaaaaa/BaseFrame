@@ -19,7 +19,7 @@ import androidx.annotation.RequiresApi;
 import androidx.annotation.RequiresPermission;
 
 import com.blankj.ALog;
-import com.example.baseframe.api.App;
+import com.example.baseframe.App;
 
 import java.lang.reflect.Method;
 import java.text.DecimalFormat;

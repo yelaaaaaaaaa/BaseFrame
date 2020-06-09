@@ -26,7 +26,7 @@ import androidx.annotation.RequiresApi;
 import androidx.annotation.RequiresPermission;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.baseframe.api.App;
+import com.example.baseframe.App;
 
 import java.lang.reflect.Method;
 

@@ -4,7 +4,7 @@ package com.example.baseframe.utils;
 import androidx.lifecycle.AndroidViewModel;
 
 
-import com.example.baseframe.base.BaseViewModel;
+import com.example.baseframe.frame.base.BaseViewModel;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;

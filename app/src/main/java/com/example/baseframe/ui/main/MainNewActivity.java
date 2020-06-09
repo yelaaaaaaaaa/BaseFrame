@@ -9,18 +9,18 @@ import com.blankj.ALog;
 
 import com.example.baseframe.BuildConfig;
 import com.example.baseframe.R;
-import com.example.baseframe.base.BaseActivity;
-import com.example.baseframe.bean.WanAndroidBannerBean;
+import com.example.baseframe.frame.base.BaseActivity;
+import com.example.baseframe.data.bean.WanAndroidBannerBean;
 import com.example.baseframe.databinding.ActivityNewMainBinding;
-import com.example.baseframe.rx.bus.RxBus;
-import com.example.baseframe.rx.bus.RxBusCode;
+import com.example.baseframe.frame.rx.bus.RxBus;
+import com.example.baseframe.frame.rx.bus.RxBusCode;
 import com.example.baseframe.ui.MainDetailActivity;
 import com.example.baseframe.ui.viewmodel.MainNewViewModel;
 import com.example.baseframe.utils.CommUtils;
 import com.example.baseframe.utils.GlideImageLoader;
 import com.example.baseframe.utils.StatusBarUtil;
 import com.example.baseframe.utils.ToastUtils;
-import com.example.baseframe.webview.WebViewActivity;
+import com.example.baseframe.weight.webview.WebViewActivity;
 import com.example.baseframe.weight.banner.BannerConfig;
 import com.example.baseframe.weight.banner.Transformer;
 
@@ -90,7 +90,6 @@ public class MainNewActivity extends BaseActivity<ActivityNewMainBinding, MainNe
     }
 
     private void getWanBanner() {
-
         mViewModel.getWanAndroidBanner().observe(this, new Observer<List<WanAndroidBannerBean>>() {
             @Override
             public void onChanged(List<WanAndroidBannerBean> dataBeans) {

@@ -18,7 +18,7 @@ import androidx.core.util.Pair;
 import androidx.fragment.app.FragmentActivity;
 
 import com.blankj.ALog;
-import com.example.baseframe.api.App;
+import com.example.baseframe.App;
 
 import java.util.HashMap;
 import java.util.Iterator;

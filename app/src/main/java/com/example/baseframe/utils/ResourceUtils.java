@@ -33,7 +33,7 @@ import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
 
 import com.blankj.ALog;
-import com.example.baseframe.api.App;
+import com.example.baseframe.App;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;

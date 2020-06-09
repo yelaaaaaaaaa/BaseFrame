@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.RequestOptions;
 import com.chad.library.adapter.base.animation.ScaleInAnimation;
-import com.example.baseframe.base.BaseMvvmRecyclerAdapter;
+import com.example.baseframe.frame.base.BaseMvvmRecyclerAdapter;
 import com.example.baseframe.weight.recyclerview.DividerLine;
 
 import static com.example.baseframe.weight.recyclerview.DividerLine.LineDrawMode.BOTH;
@@ -65,20 +65,17 @@ public class DataBindingAdapter {
     }
 
 
-
-
-
     @BindingAdapter({"android:itemDecoration"})
     public static void addItemDecoration(RecyclerView mRecyclerView, int type) {
-        switch (type){
+        switch (type) {
             case 0:
-                mRecyclerView.addItemDecoration(new DividerLine(mRecyclerView.getContext(),HORIZONTAL));
+                mRecyclerView.addItemDecoration(new DividerLine(mRecyclerView.getContext(), HORIZONTAL));
                 break;
             case 1:
-                mRecyclerView.addItemDecoration(new DividerLine(mRecyclerView.getContext(),VERTICAL));
+                mRecyclerView.addItemDecoration(new DividerLine(mRecyclerView.getContext(), VERTICAL));
                 break;
             case 2:
-                mRecyclerView.addItemDecoration(new DividerLine(mRecyclerView.getContext(),BOTH));
+                mRecyclerView.addItemDecoration(new DividerLine(mRecyclerView.getContext(), BOTH));
                 break;
         }
 
@@ -86,13 +83,13 @@ public class DataBindingAdapter {
     }
 
 
-    @BindingAdapter(value ={"adapter", "bindAdapterAnimation"}, requireAll = false)
+    @BindingAdapter(value = {"adapter", "bindAdapterAnimation"}, requireAll = false)
     public static void bindAdapter(RecyclerView recyclerView, BaseMvvmRecyclerAdapter adapter, int animation) {
         recyclerView.setAdapter(adapter);
         //设置动画
         if (animation != 0) {
             adapter.setAdapterAnimation(new ScaleInAnimation());
-           // adapter.openLoadAnimation(animation);
+            // adapter.openLoadAnimation(animation);
         }
         //adapter.notifyDataSetChanged();
         // recyclerView.setPageFooter(R.layout.layout_loading_footer);

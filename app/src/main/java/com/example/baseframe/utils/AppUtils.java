@@ -39,7 +39,7 @@ import android.view.inputmethod.InputMethodManager;
 import androidx.annotation.RequiresPermission;
 
 import com.blankj.ALog;
-import com.example.baseframe.api.App;
+import com.example.baseframe.App;
 import com.example.baseframe.utils.encrypt.EncryptUtils;
 
 import java.io.File;

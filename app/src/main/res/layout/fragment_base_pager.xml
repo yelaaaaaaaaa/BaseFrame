@@ -3,7 +3,7 @@
 
     <data>
 
-        <import type="com.example.baseframe.base.BaseViewModel" />
+        <import type="com.example.baseframe.frame.base.BaseViewModel" />
 
         <variable
             name="viewModel"

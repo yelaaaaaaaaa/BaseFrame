@@ -11,11 +11,11 @@ import androidx.databinding.DataBindingUtil;
 import com.blankj.ALog;
 
 import com.example.baseframe.R;
-import com.example.baseframe.base.BaseFragment;
+import com.example.baseframe.frame.base.BaseFragment;
 import com.example.baseframe.databinding.ActivityMainDetailBinding;
 import com.example.baseframe.databinding.TitleLayoutBinding;
-import com.example.baseframe.download.DownLoadManager;
-import com.example.baseframe.download.ProgressCallBack;
+import com.example.baseframe.data.download.DownLoadManager;
+import com.example.baseframe.data.download.ProgressCallBack;
 import com.example.baseframe.ui.viewmodel.MainDetialViewModel;
 import com.example.baseframe.utils.CommUtils;
 import com.example.baseframe.utils.StatusBarUtil;

@@ -8,7 +8,7 @@
         <import type="com.example.baseframe.utils.StringUtil"/>
         <variable
             name="itemBean"
-            type="com.example.baseframe.bean.ArticlesBean"/>
+            type="com.example.baseframe.data.bean.ArticlesBean"/>
     </data>
 
 <LinearLayout

@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.baseframe.base.BaseViewModel" />
+            type="com.example.baseframe.frame.base.BaseViewModel" />
     </data>
 
     <LinearLayout

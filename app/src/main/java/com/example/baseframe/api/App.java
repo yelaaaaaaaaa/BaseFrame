@@ -11,6 +11,7 @@ import com.blankj.ALog;
 import com.didichuxing.doraemonkit.DoraemonKit;
 import com.example.baseframe.BuildConfig;
 import com.example.baseframe.R;
+import com.example.baseframe.utils.Utils;
 import com.example.baseframe.webview.WebViewActivity;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.DefaultRefreshHeaderCreator;
@@ -54,6 +55,7 @@ public class App extends MultiDexApplication {
         initALog();
         setSmartRefreshLayout();
         initDoraemonKit();
+        Utils.init(this);
     }
 
 

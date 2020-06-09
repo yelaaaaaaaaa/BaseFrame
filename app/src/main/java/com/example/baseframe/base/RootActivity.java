@@ -31,7 +31,8 @@ import com.example.baseframe.utils.CommUtils;
 import com.example.baseframe.utils.ToastUtils;
 import com.example.baseframe.utils.permission.PermissionsUtils;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
+import com.trello.rxlifecycle4.components.support.RxAppCompatActivity;
+
 
 import java.util.List;
 

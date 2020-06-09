@@ -27,7 +27,8 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.baseframe.listener.Listener;
 import com.example.baseframe.utils.CommUtils;
 import com.example.baseframe.weight.LoadDialog;
-import com.trello.rxlifecycle3.components.support.RxFragment;
+import com.trello.rxlifecycle4.components.support.RxFragment;
+
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;

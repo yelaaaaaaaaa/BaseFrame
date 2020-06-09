@@ -1,11 +1,15 @@
 package com.example.baseframe.api;
 
 
+import android.content.Context;
 import android.util.Log;
 
 import com.blankj.ALog;
+import com.example.baseframe.http.cookie.CookieJarImpl;
+import com.example.baseframe.http.cookie.store.PersistentCookieStore;
 import com.example.baseframe.rx.rxjava3adapter.RxJava3CallAdapterFactory;
 import com.example.baseframe.utils.CommUtils;
+import com.example.baseframe.utils.Utils;
 
 import java.util.concurrent.TimeUnit;
 
@@ -23,10 +27,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitFactory {
     public static final int TIMEOUT = 30;
     private static OkHttpClient okHttpClient;
-
+    private static Context mContext = Utils.getContext();
     private static OkHttpClient getOkHttpClient() {
         if (okHttpClient == null) {
             okHttpClient= new OkHttpClient.Builder()
+                    .cookieJar(new CookieJarImpl(new PersistentCookieStore(mContext)))
                     .connectTimeout(TIMEOUT, TimeUnit.SECONDS)//设置连接超时时间
                     .readTimeout(TIMEOUT, TimeUnit.SECONDS)//设置读取超时时间
                     .writeTimeout(TIMEOUT, TimeUnit.SECONDS)//设置写入超时时间

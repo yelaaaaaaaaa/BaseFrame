@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:bind="http://schemas.android.com/tools">
+
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 <!--        <import type="com.example.baseframe.weight.recyclerview.LayoutManagers"/>-->
@@ -15,7 +17,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/color_write">
-
         <include layout="@layout/header_new_wan"
             android:id="@+id/include"
             bind:viewModel="@{viewModel}"/><!--示例:将viewModel传入到 include布局里,让include也能引用viewModel-->

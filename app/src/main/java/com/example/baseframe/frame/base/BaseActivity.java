@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.baseframe.utils.ClassUtil;
@@ -52,7 +53,7 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
         if(getLayoutId()==0){
             return;
         }
-        mBinding = DataBindingUtil.setContentView(this, getLayoutId());
+        mBinding =  DataBindingUtil.setContentView(this, getLayoutId());
         mViewModel = initMVVMViewModel();
 
         if (mViewModel == null) {
@@ -153,7 +154,8 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
     private void createViewModel() {
         Class<VM> viewModelClass = ClassUtil.getViewModel(this);
         if (viewModelClass != null) {
-            this.mViewModel = ViewModelProviders.of(this).get(viewModelClass);
+            this.mViewModel = new ViewModelProvider(this).get(viewModelClass);
+           // this.mViewModel = ViewModelProviders.of(this).get(viewModelClass);
         }
     }
 

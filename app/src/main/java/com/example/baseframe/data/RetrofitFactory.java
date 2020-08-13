@@ -28,6 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitFactory {
     public static final int TIMEOUT = 30;
     private static OkHttpClient okHttpClient;
+    private static Retrofit mRetrofit;
     private static Context mContext = Utils.getContext();
 
     private static OkHttpClient getOkHttpClient() {
@@ -63,14 +64,16 @@ public class RetrofitFactory {
      * @return
      */
     public static Retrofit getInstance() {
-        Retrofit mRetrofit = new Retrofit.Builder()
-                .client(getOkHttpClient())
-                // 设置请求的域名
-                .baseUrl(SystemConst.BASE_URL)
-                // 设置解析转换工厂
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
-                .build();
+        if (mRetrofit==null) {
+             mRetrofit = new Retrofit.Builder()
+                    .client(getOkHttpClient())
+                    // 设置请求的域名
+                    .baseUrl(SystemConst.BASE_URL)
+                    // 设置解析转换工厂
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+                    .build();
+        }
         return mRetrofit;
     }
 

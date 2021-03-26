@@ -1,7 +1,9 @@
 package com.example.baseframe.data.bean;
 
 
-public class ArticlesBean  {
+import androidx.databinding.BaseObservable;
+
+public class ArticlesBean  extends BaseObservable {
 
     /**
      * apkLink : http://www.wanandroid.com/blogimgs/e8faab6b-ecb1-4bc2-af96-f7e5039032b3.apk
